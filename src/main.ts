@@ -1,9 +1,11 @@
 import "./styles.scss";
 
-const app = document.querySelector<HTMLDivElement>("#app")!;
-app.innerHTML = `
-  <main class="container">
-    <h1>TypeScript + SCSS ✅</h1>
-    <p>Edit <code>src/main.ts</code> and <code>src/styles.scss</code>, save, and watch changes live.</p>
-  </main>
-`;
+const hint = document.querySelector<HTMLParagraphElement>("#hint")!;
+const items = document.querySelector<HTMLUListElement>("#items")!;
+
+hint.textContent = "Edit src/main.ts and src/styles.scss, save, and watch.";
+["Alpha", "Beta", "Gamma"].forEach((label) => {
+  const li = document.createElement("li");
+  li.textContent = label;
+  items.append(li);
+});
